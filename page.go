@@ -809,8 +809,8 @@ func (p *pageImpl) onFrameDetached(frame *frameImpl) {
 
 func (p *pageImpl) onRoute(route *routeImpl) {
 	go func() {
-		p.Lock()
-		defer p.Unlock()
+		// p.Lock()
+		// defer p.Unlock()
 		route.context = p.browserContext
 		routes := make([]*routeHandlerEntry, len(p.routes))
 		copy(routes, p.routes)
